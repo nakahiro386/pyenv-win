@@ -59,6 +59,7 @@ if exist %bindir%\%2 set cmddir=%bindir%\
 if exist %bindir%\%2.exe set cmddir=%bindir%\
 if exist %bindir%\%2.bat set cmddir=%bindir%\
 set "path=%extrapaths%%path%"
+if [%cmddir%]==[] (echo %2 Not found & exit /b)
 %cmddir%%cmdline%
 endlocal
 exit /b
