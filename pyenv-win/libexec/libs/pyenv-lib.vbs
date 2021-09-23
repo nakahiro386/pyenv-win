@@ -331,7 +331,7 @@ Sub WriteWinScript(baseName)
         If InStr(1, baseName, "pip") = 1 Then
             With objfs.CreateTextFile(filespec)
                 .WriteLine("@echo off")
-                .WriteLine("chcp 1250 > NUL")
+                .WriteLine("chcp 65001 > NUL")
                 .WriteLine("call pyenv exec %~n0 %*")
                 .WriteLine("call pyenv rehash")
                 .Close
@@ -339,7 +339,7 @@ Sub WriteWinScript(baseName)
         Else
             With objfs.CreateTextFile(filespec)
                 .WriteLine("@echo off")
-                .WriteLine("chcp 1250 > NUL")
+                .WriteLine("chcp 65001 > NUL")
                 .WriteLine("call pyenv exec %~n0 %*")
                 .Close
             End With
